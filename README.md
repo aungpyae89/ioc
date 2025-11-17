@@ -15,9 +15,9 @@ The objective of this report is to support the security community by providing
 
 -MITRE ATT&CK technique mappings
 
-!!! Important Note: No organization names, internal identifiers, or sensitive commercial information are included.
+## Important Note: No organization names, internal identifiers, or sensitive commercial information are included.
 
-
+[Descriptions]
 A Linux virtual machine hosted in a cloud environment was compromised through unauthorized console access (VNC).
 Using this access, the attacker obtained root privileges, downloaded multiple malicious scripts, deployed the XMRig cryptominer, and executed anti-forensic actions including history clearing and log removal.
 
@@ -59,9 +59,9 @@ https://91.237.1.223/auto.sh
 
 https://91.237.1.223/xm.sh
 
-Mining Pool
+Mining Pool Web URL 
 
-hashvault.pro
+-hashvault.pro
 
 ## Artifacts Found on Host
 
@@ -74,6 +74,7 @@ xm.sh
 xmrig.json with Monero wallet configuration
 
 ## Attacker Tooling & Behavior
+
 # Malware Components
 | File           | Purpose                                      |
 | -------------- | -------------------------------------------- |
@@ -112,7 +113,7 @@ Persistence via modified scripts
 /main.zip.enc             (Script samples, filenames, metadata)
 /README.md              (This file)
 
-## Analysis inside main.zip file and MITRE Mapping 
+## Analysis inside main.zip file and MITRE ATT&CK Mapping
 
 🔍 Overview
 
@@ -148,7 +149,7 @@ All techniques below are aligned to MITRE ATT&CK v14.
 | All | XMRig execution | T1496 | Resource Hijacking | Final objective: launch XMRig for illicit mining. |
 
 ## SHA256 For Files 
-3178968afafbb94c4d7441f658dd32e21d585164606e68fbf892ac428402fb98  main.zip.enc
+787a5e2200df8e37353b1d577e1ece398fbff83350091bfbc9a76e7e6ceceb3c  main.zip.enc
 726fa5a147267abb9e8be400304697a9f65bf0d8bc48914f135bb40e011d7567  public_ioc_crytominer.csv
 
 ## ⚠️ Malware Sample Notice
