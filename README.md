@@ -111,7 +111,7 @@ Persistence via modified scripts
 /main.zip.enc             (Script samples, filenames, metadata)
 /README.md              (This file)
 
-## SHA265 For Files 
+## SHA256 For Files 
 3178968afafbb94c4d7441f658dd32e21d585164606e68fbf892ac428402fb98  main.zip.enc
 726fa5a147267abb9e8be400304697a9f65bf0d8bc48914f135bb40e011d7567  public_ioc_crytominer.csv
 
