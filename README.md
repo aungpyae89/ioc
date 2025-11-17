@@ -111,6 +111,7 @@ Persistence via modified scripts
 
 /public_ioc_crytominer.csv        (Full IOC list)
 /main.zip.enc             (Script samples, filenames, metadata)
+/linux-crypto-mining-stix-2.json  (STIX 2.0 Json File)
 /README.md              (This file)
 
 ## Analysis inside main.zip file and MITRE ATT&CK Mapping
@@ -151,6 +152,7 @@ All techniques below are aligned to MITRE ATT&CK v14.
 ## SHA256 For Files 
 787a5e2200df8e37353b1d577e1ece398fbff83350091bfbc9a76e7e6ceceb3c  main.zip.enc
 726fa5a147267abb9e8be400304697a9f65bf0d8bc48914f135bb40e011d7567  public_ioc_crytominer.csv
+bce5327a2b51f34368f82566a659c0d00d01a93616a2b5ce40c350f9e8d7da7d  linux-crypto-mining-stix-2.json
 
 ## ⚠️ Malware Sample Notice
 
