@@ -109,10 +109,10 @@ Persistence via modified scripts
 | T1083        | File Discovery     | Reconnaissance by scripts             |
 
 
-/public_ioc_crytominer.csv        (Full IOC list)
-/main.zip.enc             (Script samples, filenames, metadata)
-/linux-crypto-mining-stix-2.json  (STIX 2.0 Json File)
-/README.md              (This file)
+/public_ioc_crytominer.csv(Full IOC list)
+/main.zip.enc(Script samples, filenames, metadata)
+/linux-crypto-mining-stix-2.json(STIX 2.0 Json File)
+/README.md (This file)
 
 ## Analysis inside main.zip file and MITRE ATT&CK Mapping
 
