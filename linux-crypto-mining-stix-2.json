@@ -1,0 +1,143 @@
+{
+  "type": "bundle",
+  "id": "bundle--23d5e2e8-d421-4f18-97c9-5a9f532a2107",
+  "spec_version": "2.1",
+  "objects": [
+    // 1. Identity of the Contributor
+    {
+      "type": "identity",
+      "id": "identity--8e1b5b5c-b1d5-4e78-be7f-0b445e99878a",
+      "created": "2025-11-17T08:12:00.000Z",
+      "modified": "2025-11-17T08:12:00.000Z",
+      "name": "Public Threat Intelligence Contribution (Linux Cryptomining)",
+      "identity_class": "organization",
+      "description": "Public contribution for defensive use, based on observed Linux cryptomining incident. License: CC BY 4.0."
+    },
+    // 2. Malware Object (XMRig)
+    {
+      "type": "malware",
+      "id": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63",
+      "created": "2025-11-17T08:12:00.000Z",
+      "modified": "2025-11-17T08:12:00.000Z",
+      "name": "XMRig Monero Cryptominer Variant",
+      "description": "Linux-targeting cryptominer deployed via unauthorized VNC access, utilizing persistence (Cron, ld.so.preload) and defense evasion (hidepid) techniques.",
+      "is_family": false,
+      "malware_types": [
+        "resource-exploitation"
+      ]
+    },
+    // 3. Attack Patterns (Based on Script Analysis)
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--21f66810-09a8-48b6-a957-c598c084e72a",
+      "name": "Create Account: Local Account (T1136.001)",
+      "description": "Adversary created a root-level user ('system' with UID 0) via the 'useradd' command for backdooring. Observed in f.sh.",
+      "x_mitre_id": "T1136.001"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--7d084f7b-9c86-4f7f-856c-be7059a4358a",
+      "name": "Dynamic-link Library Hijacking (T1574.006)",
+      "description": "Achieved persistence and defense evasion by adding a malicious library ('system.so') to /etc/ld.so.preload. Observed in f.sh.",
+      "x_mitre_id": "T1574.006"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--1562004a-4d2c-47c3-b788-29be59e7019f",
+      "name": "Impair Defenses (T1562.004, T1562.001)",
+      "description": "Modified /proc mount options (hidepid=2) and disabled the Ctrl+Alt+Del reboot sequence.",
+      "x_mitre_id": "T1562"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--09f39009-408a-4089-a548-c923d242407b",
+      "name": "Cron (T1053.003)",
+      "description": "Used cron jobs to establish execution on reboot and hourly persistence for support scripts (logg.sh).",
+      "x_mitre_id": "T1053.003"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--041f02f2-d816-419b-a010-0220d9e9e6a2",
+      "name": "Resource Hijacking (T1496)",
+      "description": "Primary goal: XMRig cryptomining. Supported by T1489 (Service Stop) to eliminate competing miners.",
+      "x_mitre_id": "T1496"
+    },
+    {
+      "type": "attack-pattern",
+      "id": "attack-pattern--74f268f8-b397-401c-8e2b-426b647a5996",
+      "name": "File Deletion (T1070.004)",
+      "description": "Anti-forensic procedure used to remove files from the root user's home directory (k.sh).",
+      "x_mitre_id": "T1070.004"
+    },
+    // 4. Relationships (Malware uses Techniques)
+    {
+      "type": "relationship",
+      "id": "relationship--c66a8779-1100-4545-a7b2-65a5e3a53232", "relationship_type": "uses", "source_ref": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63", "target_ref": "attack-pattern--21f66810-09a8-48b6-a957-c598c084e72a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c55b1f1f-49b8-4720-9a3d-9d786e680a6b", "relationship_type": "uses", "source_ref": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63", "target_ref": "attack-pattern--7d084f7b-9c86-4f7f-856c-be7059a4358a"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--c2d15d6e-0d17-4d7a-b501-c85e2b0a334e", "relationship_type": "uses", "source_ref": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63", "target_ref": "attack-pattern--09f39009-408a-4089-a548-c923d242407b"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--f4a217c2-9a39-4d64-a5e2-638706d8a21d", "relationship_type": "uses", "source_ref": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63", "target_ref": "attack-pattern--041f02f2-d816-419b-a010-0220d9e9e6a2"
+    },
+    {
+      "type": "relationship",
+      "id": "relationship--e7b24f5a-353d-4c3e-ad91-030a210d7a04", "relationship_type": "uses", "source_ref": "malware--73e9114d-16f5-46a2-9b26-4700d1e57c63", "target_ref": "attack-pattern--74f268f8-b397-401c-8e2b-426b647a5996"
+    },
+    // 5. Indicators (Partial List for Space/Readability - All unique types are represented)
+    // Downloader IP
+    {
+      "type": "indicator",
+      "id": "indicator--6d9b0475-4c07-4e08-958b-0e5494d4d7f5",
+      "description": "Downloader IP for main.zip payload.",
+      "indicator_types": ["malicious-activity", "url-payload"],
+      "pattern": "[ipv4-addr:value = '116.203.186.178']",
+      "pattern_type": "stix"
+    },
+    // Mining Pool Domain
+    {
+      "type": "indicator",
+      "id": "indicator--b13b1f1f-49b8-4720-9a3d-9d786e680a6b",
+      "description": "Primary XMRig mining pool domain.",
+      "indicator_types": ["command-and-control"],
+      "pattern": "[domain-name:value = 'hashvault.pro']",
+      "pattern_type": "stix"
+    },
+    // Miner Infra Domain
+    {
+      "type": "indicator",
+      "id": "indicator--c18c1303-a128-4c8d-8d4e-b530c1c875d7",
+      "description": "Dynamic DNS domain used for miner infrastructure.",
+      "indicator_types": ["command-and-control"],
+      "pattern": "[domain-name:value = 'popular.dedyn.io']",
+      "pattern_type": "stix"
+    },
+    // Miner Infra IP (Example)
+    {
+      "type": "indicator",
+      "id": "indicator--d12c1303-a128-4c8d-8d4e-b530c1c875d7",
+      "description": "IP address resolving to popular.dedyn.io.",
+      "indicator_types": ["command-and-control"],
+      "pattern": "[ipv4-addr:value = '162.19.241.67']",
+      "pattern_type": "stix"
+    },
+    // Monero Wallet Indicator (STIX Pattern using X509 subject for non-standard observable)
+    {
+      "type": "indicator",
+      "id": "indicator--d18c1303-a128-4c8d-8d4e-b530c1c875d7",
+      "name": "Monero Wallet Sample 1",
+      "description": "Sample Monero wallet address configured in xmrig.json (first wallet from list).",
+      "indicator_types": ["anonymization", "anomalous-activity"],
+      "pattern": "[x509-certificate:subject = '86y728eQQiXBG824BJSX8SNr2cFjbESzCBfzbpF3if9wiYovVaJaytBZtvMGrxY7M1cmAGejXsWBDAnpk7shKDVBH8Bh6WZ']",
+      "pattern_type": "stix",
+      "pattern_version": "2.1"
+    }
+    // ... all other IPs, domains, and wallets would follow this format.
+  ]
+}
