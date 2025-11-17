@@ -1,0 +1,63 @@
+type,value,notes
+domain,popular.dedyn.io,miner infra
+ipv4,162.19.241.67,popular.dedyn.io
+ipv4,15.204.240.197,popular.dedyn.io
+ipv4,15.204.244.104,popular.dedyn.io
+ipv4,51.79.157.201,popular.dedyn.io
+ipv4,51.222.12.70,popular.dedyn.io
+ipv4,54.36.98.147,popular.dedyn.io
+
+domain,universal.dedyn.io,miner infra
+ipv4,139.99.123.196,universal.dedyn.io
+ipv4,139.99.124.170,universal.dedyn.io
+ipv4,139.99.125.38,universal.dedyn.io
+ipv4,141.94.96.71,universal.dedyn.io
+ipv4,141.95.72.59,universal.dedyn.io
+ipv4,141.95.72.60,universal.dedyn.io
+ipv4,141.95.72.61,universal.dedyn.io
+ipv4,107.167.92.130,universal.dedyn.io
+
+domain,general.dedyn.io,miner infra
+ipv4,15.204.244.104,general.dedyn.io
+ipv4,51.79.157.201,general.dedyn.io
+ipv4,51.222.12.70,general.dedyn.io
+ipv4,162.19.241.67,general.dedyn.io
+ipv4,188.165.76.243,general.dedyn.io
+ipv4,194.87.143.62,general.dedyn.io
+ipv4,8.217.191.41,general.dedyn.io
+
+domain,global.dedyn.io,miner infra
+ipv4,216.219.85.122,global.dedyn.io
+ipv4,15.235.221.117,global.dedyn.io
+ipv4,37.203.243.102,global.dedyn.io
+ipv4,80.240.16.67,global.dedyn.io
+ipv4,104.251.123.89,global.dedyn.io
+ipv4,157.20.104.252,global.dedyn.io
+ipv4,185.240.242.141,global.dedyn.io
+ipv4,192.248.189.11,global.dedyn.io
+
+domain,gulf.moneroocean.stream,monero miner pool
+ipv4,46.250.239.154,moneroocean miner pool
+
+pool,hashvault.pro,XMRig mining pool
+
+downloader_ip,116.203.186.178,main.zip downloader
+downloader_ip,91.237.1.223,auto.sh + xm.sh downloader
+
+wallet,86y728eQQiXBG824BJSX8SNr2cFjbESzCBfzbpF3if9wiYovVaJaytBZtvMGrxY7M1cmAGejXsWBDAnpk7shKDVBH8Bh6WZ,monero wallet
+wallet,ZEPHsAz72sSZmykaNzBT4uJsct4g5CwiZWxxjr5hyvqVUt6kphHam1D4HZRqg4CaZaVoeyLTCgHWw9insWQVfJxdfdBtGhUvJPw,monero wallet
+wallet,SaLvdYjDUfnRXvax1vSy4eDFi5KD54zDtUX6sVJyLw4kJfk8NFU3digQre5Br4m4UrL16K36QQDD7AmWreMc3sioB4dmZRsx1VZ,monero wallet
+wallet,88nPhLRczWeC13L2jqt7AQWD44f65aWF8H5ygo4f93CF4P3o7XQbFTwgJizVQCXKM2HxHGLsApFeg1JVAhNTKK1WKsT37ye,monero wallet
+wallet,84YQU8xgdYvZMVe7jPYNsZBg5EPAxrTBbSzUvzo4M7Z1KctfSTKD4UajbYGGqWUxfFYfXgTZBBZnFEq4dTkPyd1C4hkk4uk,monero wallet
+wallet,83GtM3JBG3TgdStycbzcFmNWqYDc8jsLP46NzQ7rCyVkDxgJp2jz9AF2HhTUZheGLue4DaNyrDXKoHRU6MLMvu73Rqezqtj,monero wallet
+wallet,8A5y8EYnNS3FReznhZB5epSRjhqNv4FvXJcMAdKTUuwr47Qg2XHkx4ECjToPXktA21BTaziuViE7P7j6e8auTx8CVagq7TY,monero wallet
+wallet,85DN1nezzyddy1XjutuJvRdnLxcJBnrvzhsRdEGHFRM3hpCd9GUMjR37TAVPLnkLPDemJkbkYALS8AH3iHeJEYHWAqSdTU,monero wallet
+wallet,88cr5e1fgp1Cc2wpvFkA836CvYYUh2iZK2xR9pyKU3tdeVbf3bxASJJW9DqmtsQLW4NivZ2yueVYxPobiBCYq53uLnYBv33,monero wallet
+wallet,478GRWehHmkAc6JBEe26tAfS27qAbcTv7DSnekvWkV1UHr6BdMZTBnyZha2nYjahqvKy8JPwATMfJ7BuwAcSMfAfQsracjZ,monero wallet
+wallet,88drWvdzNFP3gzBktkDykCh6aqhEnAMtrBuQDd3MQ26eEenwQYmAXmTjYg1yMarCCHi3TasErzLbPFdBejC8YLTv7257RLu,monero wallet
+wallet,83unwv88vNCLhfGNZGMpbWQVUEzzYtB14NbVTiprw5FG9vDTWNrEPCzByfMBiS5GuXNy6EfWdisafG1CY5fL4E5NBba3Emr,monero wallet
+wallet,82YRuGtAwUqayEGuMySXhHB1XjUqELGNXBPLzTroTuPuLdnjcZAkuk66dh5DSXEBdndAK9KbbchhX3vCkCRKNRUL6UZqDhz,monero wallet
+wallet,88wUDjow9dV85MP8WxsqqVWZhvX88nuphdPJTsHnfJpbJNgn8r4hgNPFAppHwqyn7rHYbEq23GwaNZG5SffAbzHoQiMLT79,monero wallet
+wallet,ZEPHs9uDwdGho5JG7Bg3sBZ8wPuKeLpRM5XMXNiAeB4d9oTq9Yyp7FwjHULNKW9o2HTnnUaR3xRtMdBTNiiZcJ28BDq6JVQeD92,monero wallet
+wallet,ZEPHsBWMykxEXZeLTivpzeZ6aZM7BySNENNj58poLrpXKTgvNHCLKPXTLuRxpzXc6uBPdVBCCnq75ER4XZGQmQ7y3QtbeGKJ2Wc,monero wallet
+
