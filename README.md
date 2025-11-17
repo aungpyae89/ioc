@@ -7,15 +7,15 @@ Status: Public Disclosure / Research Contribution
 This repository contains publicly shareable threat intelligence related to a confirmed Linux VM compromise that resulted in the deployment of an XMRig Monero cryptominer.
 The objective of this report is to support the security community by providing
 
-Indicators of Compromise (IOCs)
+-Indicators of Compromise (IOCs)
 
-Timeline of attacker activity
+-Timeline of attacker activity
 
-Malware artifacts (scripts, downloader URLs, wallets)
+-Malware artifacts (scripts, downloader URLs, wallets)
 
-MITRE ATT&CK technique mappings
+-MITRE ATT&CK technique mappings
 
-Important Note : No organization names, internal identifiers, or sensitive commercial information are included.
+!!! Important Note: No organization names, internal identifiers, or sensitive commercial information are included.
 
 
 A Linux virtual machine hosted in a cloud environment was compromised through unauthorized console access (VNC).
@@ -107,9 +107,45 @@ Persistence via modified scripts
 | T1070        | Indicator Removal  | Log & shell history deletion          |
 | T1083        | File Discovery     | Reconnaissance by scripts             |
 
+
 /public_ioc_crytominer.csv        (Full IOC list)
 /main.zip.enc             (Script samples, filenames, metadata)
 /README.md              (This file)
+
+## Analysis inside main.zip file and MITRE Mapping 
+
+🔍 Overview
+
+Attackers commonly deploy a collection of bash scripts (f.sh, k.sh, d.sh, logg.sh) to
+
+Create unauthorized root-level accounts
+
+Hijack execution flow via library preload
+
+Hide processes and impair defenses
+
+Stop competing miners and security tools
+
+Maintain persistence via cron
+
+Auto-select the best mining configuration
+
+Execute XMRig for cryptojacking
+
+All techniques below are aligned to MITRE ATT&CK v14.
+
+| Script | Line / Action | Technique ID | Technique Name | Details |
+|--------|----------------|--------------|----------------|---------|
+| f.sh | `useradd --non-unique --uid 0 system` | T1136.001 | Create Account: Local Account | Creates a root-level (UID 0) user named **system** for backdooring. |
+| f.sh | `mv uv system.so /usr/local/lib/... && echo '/usr/local/lib/system.so' | tee -a /etc/ld.so.preload` | T1574.006 | Hijack Execution Flow: Dynamic-link Library Hijacking | Injects a malicious shared object into preload list to hijack system binaries. |
+| f.sh | `echo 'proc /proc proc defaults,hidepid=2 0 0' >> /etc/fstab` + `mount -o remount,rw,hidepid=2 /proc` | T1562.004 | Impair Defenses: Disable or Modify System Firewall | Hides system processes from other users; stealth technique. |
+| f.sh | `systemctl mask -f ctrl-alt-del.target` | T1562.001 | Impair Defenses: Disable or Modify Tools | Blocks Ctrl+Alt+Del kernel reboot path to prevent manual recovery. |
+| f.sh | GRUB password modifications | T1078.004 | Valid Accounts: Local Accounts | Sets GRUB bootloader password for unauthorized boot-time access. |
+| logg.sh | `crontab -l | grep -q ... && echo '* * * * * /mnt/loggd.sh'` | T1053.003 | Scheduled Task/Job: Cron | Adds recurring cron job for persistence. |
+| k.sh | `ufw deny 22`, killing processes, stopping services | T1489 | Service Stop | Disables security tools / competing miners to protect attacker resources. |
+| k.sh | `ls -A /root | grep -v -E ... | xargs -I {} rm -rf /root/{}` | T1070.004 | Indicator Removal on Host | Deletes evidence/logs inside `/root` directory. |
+| d.sh | `rm -rf config.json; mv config[x/h/z].json config.json` | T1083 | File and Directory Discovery | Auto-selects appropriate miner config based on system characteristics. |
+| All | XMRig execution | T1496 | Resource Hijacking | Final objective: launch XMRig for illicit mining. |
 
 ## SHA256 For Files 
 3178968afafbb94c4d7441f658dd32e21d585164606e68fbf892ac428402fb98  main.zip.enc
