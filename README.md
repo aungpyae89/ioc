@@ -111,6 +111,10 @@ Persistence via modified scripts
 /main.zip.enc             (Script samples, filenames, metadata)
 /README.md              (This file)
 
+## SHA265 For Files 
+3178968afafbb94c4d7441f658dd32e21d585164606e68fbf892ac428402fb98  main.zip.enc
+726fa5a147267abb9e8be400304697a9f65bf0d8bc48914f135bb40e011d7567  public_ioc_crytominer.csv
+
 ## ⚠️ Malware Sample Notice
 
 This repository contains an encrypted malware sample (`main.zip.enc`) for 
@@ -126,5 +130,5 @@ isolated analysis environment (air-gapped VM, no network, no production access).
 This publication follows common practices used by MalwareBazaar, HybridAnalysis,
 and other malware research-sharing communities.
 
-📝 License
+## 📝 License
 This documentation and artifacts are published under [CC BY 4.0] for global defender use.
