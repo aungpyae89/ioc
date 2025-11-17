@@ -1,6 +1,7 @@
 # Linux VM Cryptomining Incident – Public Threat Intelligence Report
 
 Last Updated: 2025-09-25
+
 Status: Public Disclosure / Research Contribution
 
 This repository contains publicly shareable threat intelligence related to a confirmed Linux VM compromise that resulted in the deployment of an XMRig Monero cryptominer.
@@ -13,8 +14,6 @@ Timeline of attacker activity
 Malware artifacts (scripts, downloader URLs, wallets)
 
 MITRE ATT&CK technique mappings
-
-STIX 2.1 threat intelligence bundle 
 
 Important Note : No organization names, internal identifiers, or sensitive commercial information are included.
 
@@ -108,10 +107,9 @@ Persistence via modified scripts
 | T1070        | Indicator Removal  | Log & shell history deletion          |
 | T1083        | File Discovery     | Reconnaissance by scripts             |
 
-/public_ioc_crytominer.csv        → Full IOC list
-/stix_bundle.json       → STIX 2.1 Bundle
-/artifacts/             → Script samples, filenames, metadata
-/README.md              → This file
+/public_ioc_crytominer.csv        (Full IOC list)
+/main.zip.enc             (Script samples, filenames, metadata)
+/README.md              (This file)
 
 ## ⚠️ Malware Sample Notice
 
@@ -127,3 +125,6 @@ isolated analysis environment (air-gapped VM, no network, no production access).
 
 This publication follows common practices used by MalwareBazaar, HybridAnalysis,
 and other malware research-sharing communities.
+
+📝 License
+This documentation and artifacts are published under [CC BY 4.0] for global defender use.
